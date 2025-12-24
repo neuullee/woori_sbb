@@ -18,12 +18,6 @@ public class QuestionController {
 
     private final QuestionService questionService;
 
-//    @GetMapping("/list")
-//    public String list(Model model) {
-//        List<Question> questionList = this.questionService.getList();
-//        model.addAttribute("questionList", questionList);
-//        return "question_list";
-//    }
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue="0") int page) {
@@ -42,7 +36,6 @@ public class QuestionController {
     }
 
     @GetMapping("/create")
-//    public String questionCreate(){
     public String questionCreate(QuestionForm questionForm) {
         return "question_form";
     }
